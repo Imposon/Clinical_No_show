@@ -1,12 +1,45 @@
-World Health Organization (WHO) and Centers for Disease Control and Prevention (CDC) guidelines for managing appointment adherence and proactive care coordination:
+# Clinical Care Guidelines & Intervention Protocol Database
+# Version: 2.1 - Milestone 2 Update
+# Contributor: Ayush Kumar
 
-1. Send automated SMS or voice call reminders at least 48 hours before the scheduled appointment for all high-risk patients.
-2. Offer flexible rescheduling options, including telehealth visits, for patients with long lead times (greater than 15 days) between booking and the appointment dates.
-3. Prioritize personal outreach and follow-up phone calls for patients on algorithms who did not receive an SMS confirmation.
-4. Consider implementing same-day confirmation calls for patients with a documented prior history of no-shows.
-5. Engage social workers or patient navigators for patients demonstrating multiple chronic conditions such as Hypertension and Diabetes, as they face higher barriers to access.
-6. Assess potential transportation and financial barriers when developing individual care plans.
-7. Conduct regular audits of appointment wait times and strive to reduce lead times for vulnerable demographics.
-8. Patient privacy must be strictly maintained; all interventions must fully comply with local medical and healthcare regulations.
-9. Care coordination interventions are advisory and must supplement, not replace, clinical judgment by qualified healthcare professionals.
-10. Systematically document the reasons for missed appointments to continuously improve scheduling policies and outreach programs.
+[SECTION: GENERAL NO-SHOW PROTOCOLS]
+1. Initial Contact: All patients predicted with >60% risk must receive a personal call 48 hours prior.
+2. Barrier Assessment: Clinical staff should inquire about transportation, childcare, or work schedule conflicts.
+3. Flexibility: Offer telehealth alternatives for patients with mobility or distance barriers.
+4. Incentivization: Discuss the importance of continuity of care for long-term health outcomes.
+
+[SECTION: DIABETES & HYPERTENSION SPECIALIZED CARE]
+- Patients with hypertension exhibit 25% higher no-show rates in urban areas.
+- Protocol: Ensure medication refill alignment with appointment dates.
+- Intervention: "Triple Check" verification for elderly patients living in low-mobility zones.
+- Education: Provide pamphlets on the impact of missed monitoring on blood sugar regulation.
+
+[SECTION: SOCIO-ECONOMIC BARRIERS (SCHOLARSHIP PATIENTS)]
+- Strategy: Prioritize morning slots for patients relying on restricted public transport schedules.
+- Support: Coordinate with local social workers if financial barriers to transport are identified.
+- Reminder: Use SMS text reminders with clear "Opt-out" or "Reschedule" instructions to reduce friction.
+
+[SECTION: LEAD TIME OPTIMIZATION]
+- Clinical data suggests no-show rates increase by 1.5% for every day of lead time beyond 7 days.
+- Protocol: For appointments scheduled 2+ weeks out, implement a "Re-confirmation Pulse" at the 7-day mark.
+- Dynamic Scheduling: Keep a "waitlist" of local low-risk patients to fill last-minute cancellations from high-risk cohorts.
+
+[SECTION: ALCOHOLISM & MENTAL HEALTH]
+- Sensitivity: Ensure reminders are delivered with patient privacy as a priority.
+- Holistic Approach: Link mental health appointments with general check-ups to minimize multiple travel requirements.
+- Trust Building: Assign a dedicated "Care Navigator" for chronic high-risk no-show patients.
+
+[SECTION: SMS VERIFICATION EFFICACY]
+- Evidence indicates that SMS verification reduces no-show probability by 30% on average.
+- Strategy: Ensure SMS system captures "Confirmed" vs "No Response" status.
+- Secondary Action: If no SMS response is received 24h prior, initiate a direct voice call.
+
+[SECTION: PEDIATRIC & AGING INFRASTRUCTURE]
+- Pediatric appointments: Target parents via personalized outreach emphasizing growth charting milestones.
+- Geriatric appointments: Coordinate with family members or caregivers noted in the EMR.
+- Facility Access: Verify wheelchair accessibility requirements during the 48h confirmation call.
+
+[SECTION: ETHICAL & DATA PRIVACY CONSIDERATIONS]
+- Data usage: All no-show predictions must be used for supportive intervention, never for service denial.
+- Transparency: Patients should be informed that the clinic uses predictive analytics to improve service accessibility.
+- Consent: Ensure all outreach channels (SMS/Call) are compliant with regional health data privacy laws.
