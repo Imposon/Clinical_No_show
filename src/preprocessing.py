@@ -41,3 +41,4 @@ def preprocess(df):
     ], axis=1, inplace=True, errors='ignore')
 
     return df
+# Improved preprocessing with additional feature handling
