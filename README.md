@@ -1,83 +1,103 @@
-# Clinical Appointment No-Show Prediction & Agentic Care Coordination System
+# 🏥 Clinical Appointment No-Show Predictor & Agentic Care Coordinator
 
-## 📌 Overview
-This project predicts the probability that a patient will miss a scheduled clinical appointment (No-Show) using traditional machine learning techniques, and provides an **AI Care Coordinator** to generate actionable, evidence-based intervention plans using LangGraph and Groq APIs.
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://streamlit.io/)
+[![LangGraph](https://img.shields.io/badge/Agent-LangGraph-orange)](https://langchain-ai.github.io/langgraph/)
 
-The single Streamlit application (`app.py`) provides both:
-1. **ML Predictions:** Identifies and visualizes probability of no-shows.
-2. **AI Care Coordinator:** Leverages RAG (Retrieval-Augmented Generation) with FAISS to analyze high-risk cohorts and recommend interventions against local health guidelines.
-
----
-
-## 🎯 Problem Statement
-Missed medical appointments lead to revenue loss, inefficient scheduling, and wasted medical resources. This system helps clinics proactively identify high-risk appointments and takes preventive action through an agentic AI system that generates structured reports.
+A premium, end-to-end solution for predicting clinical appointment no-shows and coordinating preventative care. Leveraging XGBoost for ML predictions and a LangGraph-powered RAG agent for evidence-based interventions.
 
 ---
 
-## 🛠 Milestones Included
-- **Milestone 1:** Traditional ML pipeline with Random Forest Classifier and risk categorization.
-- **Milestone 2:** LangGraph agent featuring RAG pipeline, retrieving from CDC/WHO guidelines, generating reports via `llama-3.1-8b-instant` (via Groq), and exporting to valid PDF.
+## 🎨 System Overview
+
+This application bridges the gap between raw predictive analytics and clinical action. It features a dual-engine architecture:
+
+1.  **ML Engine:** Uses a high-performance XGBoost model to analyze patient demographics, appointment lead times, and historical behavior to calculate a precise "No-Show" risk probability.
+2.  **RAG Agent Engine:** A multi-step autonomous agent built with **LangGraph** that retrieves relevant clinical guidelines from a **FAISS** vector store to generate personalized care coordination plans.
 
 ---
 
-## 🚀 How to Run Locally
+## 🛠 Features
 
-### 1️⃣ Clone the Repository
+### 📊 Intelligent ML Predictions
+- **Real-time Batch Processing:** Upload CSV records and receive instant risk scores.
+- **Risk Categorization:** Patients are automatically grouped into **High**, **Medium**, and **Low** risk categories.
+- **Dynamic Charts:** Interactive visualizations using Altair showing risk distribution and key feature drivers (age, lead time, SMS verification).
 
+### 🤖 Agentic Care Coordinator
+- **RAG-Powered Insights:** Contextual analysis using official clinical guidelines stored in a semantic vector database.
+- **Automated Reporting:** Generates structured PDF reports containing:
+    - Executive risk summaries.
+    - Identification of key contributing factors (e.g., social determinants, lead time).
+    - Multi-priority intervention strategies.
+- **Powered by Groq:** High-speed inference using `llama-3.1-8b-instant`.
+
+---
+
+## 🏗 High-Level Architecture
+
+```mermaid
+graph TD
+    A[Patient Data CSV] --> B[ML Prediction Engine]
+    B --> C[Risk Probabilities]
+    C --> D{High Risk Cohort?}
+    D -- Yes --> E[AI Care Coordinator]
+    E --> F[FAISS Vector Store]
+    F --> G[Clinical Guidelines]
+    G --> E
+    E --> H[LangGraph Flow]
+    H --> I[LLM Report Generation]
+    I --> J[PDF Export & Action Plan]
+    D -- No --> K[General Monitoring]
+```
+
+---
+
+## 🚀 Installation & Setup
+
+### 1. Project Initialization
 ```bash
 git clone https://github.com/Imposon/Clinical_No_show.git
 cd Clinical_No_show
-```
-
-### 2️⃣ Create a Virtual Environment
-
-Make sure Python 3.10 or above is installed.
-```bash
 python3 -m venv venv
-```
-Activate the environment:
-Mac/Linux
-```bash
-source venv/bin/activate
-```
-Windows
-```bash
-venv\Scripts\activate
-```
-
-### 3️⃣ Install Dependencies
-```bash
+source venv/bin/activate  # venv\Scripts\activate on Windows
 pip install -r requirements.txt
 ```
 
-### 4️⃣ Setup Environment Variables & Build Index
-You will need a free [Groq API Key](https://console.groq.com/).
+### 2. Environment Configuration
+Create a `.env` file or Streamlit secrets with your Groq API key:
+```env
+GROQ_API_KEY=your_api_key_here
+```
 
-Run the FAISS index builder locally once:
+### 3. Build Guidelines Index
+Execute the indexing script to prepare the FAISS vector database:
 ```bash
 python build_faiss_index.py
 ```
-This will compile guidelines into a local `faiss_index/` folder, which should be committed to GitHub.
 
-Create a `.streamlit/secrets.toml` file in your directory to store your Groq API Key:
-```toml
-GROQ_API_KEY = "gsk_xxxxxxxxxxxxxxxxx"
-```
-
-### 5️⃣ Run the Application
+### 4. Launch Dashboard
 ```bash
 streamlit run app.py
 ```
-The app will open in your browser at `http://localhost:8501`.
 
 ---
 
-## ☁️ Deployment Notes (Streamlit Community Cloud)
-1. Get an API key from the Groq console.
-2. Make sure you ran `python build_faiss_index.py` locally and successfully pushed the resulting `faiss_index/` folder to your GitHub repository.
-3. Deploy the application straight from your GitHub repository onto Streamlit Community Cloud.
-4. Go to App Settings -> **Secrets** and add:
-   ```toml
-   GROQ_API_KEY = "gsk_xxxxxxx"
-   ```
-5. Deploy and restart!
+## 📋 Technology Stack
+- **Frontend:** Streamlit (Multi-tab structure)
+- **Machine Learning:** Scikit-Learn, XGBoost, Joblib
+- **AI Agent:** LangGraph, LangChain
+- **Vector Database:** FAISS
+- **Report Generation:** FPDF2
+- **Analytics:** Pandas, Altair, Plotly
+
+---
+
+## 🤝 Team Contribution - Milestone 2
+- **Aditya:** Lead Developer, Agent Architecture (LangGraph), Multi-tab UI.
+- **Ayush:** RAG Specialist, FAISS Integration, Data Validation.
+- **Vedansha:** Frontend Analyst, Interactive Visualizations.
+- **Shekhar:** Performance Optimization, Documentation & System Benchmarking.
+
+---
+*Created for Clinical Efficiency & Patient Access Improvement.*
