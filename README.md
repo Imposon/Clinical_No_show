@@ -92,12 +92,3 @@ streamlit run app.py
 - **Analytics:** Pandas, Altair, Plotly
 
 ---
-
-## 🤝 Team Contribution - Milestone 2
-- **Aditya:** Lead Developer, Agent Architecture (LangGraph), Multi-tab UI.
-- **Ayush:** RAG Specialist, FAISS Integration, Data Validation.
-- **Vedansha:** Frontend Analyst, Interactive Visualizations.
-- **Shekhar:** Performance Optimization, Documentation & System Benchmarking.
-
----
-*Created for Clinical Efficiency & Patient Access Improvement.*
